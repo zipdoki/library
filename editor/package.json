@@ -1,0 +1,13 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "Markdown editor backed by a pages git branch",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "simple-git": "^3.21.0"
+  }
+}

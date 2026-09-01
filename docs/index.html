@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/library/">
+  <title>library</title>
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/112409928">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11/styles/github.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11/languages/scala.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <div class="app-identity">
+          <img class="app-avatar" src="https://avatars.githubusercontent.com/u/112409928" alt="">
+          <span class="app-title">library</span>
+        </div>
+        <div class="sidebar-header-actions">
+          <button id="btn-collapse-sidebar" title="사이드바 접기"></button>
+        </div>
+      </div>
+      <div id="file-tree"></div>
+      <div id="tree-cache-info" hidden></div>
+    </aside>
+
+    <div id="sidebar-resizer"></div>
+    <div id="sidebar-backdrop"></div>
+
+    <main id="main">
+      <div id="toolbar">
+        <button id="btn-menu" title="메뉴"></button>
+        <div id="file-path-container">
+          <span id="file-path-display" class="file-path placeholder"></span>
+        </div>
+        <div id="toolbar-actions">
+          <span id="file-cache-info" class="file-cache-info" hidden></span>
+          <button id="btn-width" class="btn-theme" title="너비 전환">⇔</button>
+          <button id="btn-theme" class="btn-theme" title="테마 변경">Aa</button>
+        </div>
+      </div>
+
+      <div id="content-view" style="display:none"></div>
+
+      <div id="skeleton-loader" style="display:none">
+        <div class="sk-line"></div>
+      </div>
+
+      <div id="dir-view" style="display:none">
+        <div id="dir-files-grid"></div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const p = sessionStorage.getItem('spaPath');
+    if (p) { sessionStorage.removeItem('spaPath'); history.replaceState(null, '', p); }
+  </script>
+  <script type="module" src="js/app-view.js"></script>
+</body>
+</html>
